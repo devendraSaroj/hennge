@@ -1,38 +1,196 @@
+/* Main application divs */
+
+:root {
+  --grey: rgb(209, 209, 209);
+  --light-grey: rgb(245, 245, 245);
+  --dark-grey: rgb(102, 102, 102);
+
+  --default-font: Helvetica;
+
+}
+
 .App {
-  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow-x: hidden;
+
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App-header, .App-body {
+
+  display: flex;
+  flex-direction: column;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.line,
+.App-header {
+  padding: 20px 0 0 20px;
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+
+  justify-content: flex-end;
+  align-items: flex-start;
+  align-content: flex-start;
+
+  padding: 20px 0 0 20px;
+
+}
+
+.App-body {
+
+  justify-content: flex-start;
   align-items: center;
+}
+
+.ellipsis {
+
+  max-width: 100%;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.desktop-datepicker {
+
+  display: none;
+}
+
+/* Contains the iconCalendar, the date picker and the iconSearch button */
+
+.dpicker-wrapper  {
+  
+  display: flex;
+  margin-bottom: 15px;
+}
+
+/* CSS for the date picker */
+
+.desktop-datepicker,
+.mobile-datepicker {
+
+  display: flex;
+  align-items: center;
+  justify-items: center;
+}
+
+.desktop-datepicker {
+
+  display: none;
+}
+
+.dpicker {
+
+  display: flex;
+  align-items: center;
+  justify-items: center;
+
+  padding-left: 20px;
+
+  border-left: 1px solid var(--grey);
+  border-right: 1px solid var(--grey);
+
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+
+.dpicker__input {
+
+  width: 85px;
+
+  font-size: var(--font-size);
+  font-family: Helvetica;
+
+  border: none;
+}
+
+.dpicker img {
+
+  margin-right: 10px;
+}
+
+.dpicker, .dpicker__bnt-search {
+
+  min-height: 45px;
+  min-width: 45px;
+  padding-right: 10px;
+  padding-left: 10px;
+
+  border-top: 1px solid var(--grey);
+  border-bottom: 1px solid var(--grey);
+
+}
+
+.dpicker__bnt-search {
+
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+
+  background-color: var(--light-grey);
+
+  border-right: 1px solid var(--grey);
+
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+
+  cursor: pointer;
+  outline: none;
 }
 
-.App-link {
-  color: #61dafb;
+/* Icons used in the app */
+
+.icon {
+
+  height: 1rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Contains the "Results: 0mail(s)" text */
+
+.div-results-counter {
+
+  width: 100%;
+
+  color: var(--dark-grey);
+
+  padding: 0 0 10px 0;
+}
+
+.line {
+
+  border-top: 1px solid var(--grey);
+}
+
+/* Used for the number showing the  */
+
+.big-text {
+
+  font-size: 1.4rem;
+  margin-right: 2px;
+}
+
+@media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */
+
+  .mobile-datepicker {
+
+    display: none;
   }
-  to {
-    transform: rotate(360deg);
+
+  .desktop-datepicker {
+
+    display: block;
   }
+
+  .App-header {
+
+    padding: 30px 0 0 40px;
+  }
+
 }
